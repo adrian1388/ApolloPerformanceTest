@@ -160,7 +160,7 @@ const cache = new InMemoryCache();
 let client;
 let token;
 const login = () => {
-  const request = new Request(`http://192.168.0.122:8063/login`, {
+  const request = new Request(`http://192.168.0.143:8063/login`, {
     method: "POST",
     mode: "cors",
     body: `userId=ctumbaco@vinsotel.com&password=96dfd0a6-308e-4de0-8004-158343263824&remember-me=false`,
@@ -182,7 +182,7 @@ const login = () => {
           console.info('Authentication OK', data)
 
           client = new ApolloClient({
-            uri: "http://192.168.0.122:8063/graphql",
+            uri: "http://192.168.0.143:8063/graphql",
             cache,
             credentials: "include",
             fetch: (uri, options) => {
@@ -222,7 +222,7 @@ const login = () => {
       });
     })
     .catch(error => {
-      console.info('error', error)
+      console.info('error login', error.networkError)
       // showMessage({
       //   success: false,
       //   ...messages.noConnectionAvailable
@@ -233,7 +233,7 @@ const login = () => {
 };
 
 const doLogout = (token) => {
-  const request = new Request(`http://192.168.0.122:8063/logout`, {
+  const request = new Request(`http://192.168.0.143:8063/logout`, {
     method: "POST",
     headers: {
       "X-CSRF-TOKEN": token
