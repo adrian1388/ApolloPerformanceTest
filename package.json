@@ -13,7 +13,7 @@
     "graphql": "^14.4.2",
     "react": "16.8.3",
     "react-apollo": "^2.5.8",
-    "react-native": "0.59.4",
+    "react-native": "0.62.3",
     "rn-fetch-blob": "^0.10.16",
     "why-did-you-update": "^1.0.6"
   },
